@@ -1,0 +1,302 @@
+<html>
+<head>
+  <title>Registro</title>
+  <script src="js/jquery-3.3.1.js"></script>
+  
+  <!-- SCRIPTS PROVISIONALES PARA EL FORMULARIO -->
+  <script>
+    $(document).ready(function(){
+      $(".spanCheck1").on("click", function(){
+        if($('#checkbox1')[0].checked){
+             $('#checkbox1').prop('checked', false);
+        }
+        else{
+            $('#checkbox1').prop('checked', true);
+        }
+      });
+
+      // para almacenar los datos en una cadena JSON
+      function onSubmit( form ){
+        var dataForm = $(form).serializeArray();
+        var dataFormObject = {};
+        $.each(dataForm, function(i, v) {
+            dataFormObject[v.name] = v.value;
+        });
+        console.log( dataFormObject );
+
+        document.getElementById('test').innerHTML = JSON.stringify(dataFormObject);
+      }
+
+      document.getElementById('RegForm').addEventListener('submit', function(event){
+          event.preventDefault();
+          onSubmit(this);
+      });
+
+    });
+  </script>
+
+  // <!-- ESTILOS PROVISIONALES PARA EL FORMULARIO -->
+  <style>
+    form { width:655px; margin:0 auto; }
+    div.fieldset { width: 655px; }
+    fieldset { border:none; padding: 25px; }
+    legend { font-size: 20px; font-weight: bold; padding-left: 10px; }
+    label.field { text-align: left; width: 200px; float: left; font-weight: bold; }
+    input { text-indent: 5px; }
+    input.textbox-300 { width: 300px; float:left; }
+    input.textbox-50 { width: 50px; float:left; }
+    input.image { width: 100px; }
+    fieldset p { clear:both; padding: 5px; }
+    label span, .required { color:red; font-weight: bold; }
+    hr { float:left; width: 650px; }
+    #spanCheck1, #checkbox1{
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FORMULARIO PARA EL REGISTRO DE USUARIO DISTRIBUIDOR -->
+  <form id="RegForm">
+    <input type="hidden" name="RegForm" value="2" />
+    <h1>Solicitud para ser distribuidor Aspel</h1>
+    <hr>
+    <div class="fieldset">
+      <fieldset>
+        <legend>Información del contacto.</legend>
+        <p>
+          <label class="field"><span>*</span>Nombre de la Empresa/Razón Social/Persona Física:</label>
+          <input class="textbox-300" type="text" name="V_razon" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>Contacto:</label>
+          <input class="textbox-300" type="text" name="V_Nombre_res" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>Procedencia:</label>
+          <select class="textbox-300" name="v_procedencia" required>
+            <option>Auto-registro</option>
+            <option>Boletín de la computación</option>
+            <option>Distribuidor Telmex</option>
+            <option>E-semanal</option>
+            <option>Enlace Empresarial TELMEX DF</option>
+            <option>Expocentel 2008</option>
+            <option>IT Sitio</option>
+          </select>
+        </p>
+        <p>
+          <label class="field"><span>*</span>Teléfono:</label>
+          <input class="textbox-50" type="text" name="V_lada" maxlength="3" required />
+          <input class="textbox-300" type="text" name="V_telefono" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>Correo electrónico:</label>
+          <input class="textbox-300" type="email" name="V_email" required />
+          <label class="field">(Para dos o más direcciones, sepáralas con ",")</label>
+        </p>
+        <p>
+          <label class="field"><span>*</span>Confirmar correo:</label>
+          <input class="textbox-300" type="email" name="confemail" required />
+        </p>
+        <p>
+          <label class="field">Póliza Aspel:</label>
+          <input class="textbox-300" type="text" name="V_dist" />
+          <label class="field">(Sólo si ya estabas registrado como Distribuidor anteriormente)</label>
+        </p>
+      </fieldset>
+    </div>
+    <hr>
+
+    <div class="fieldset">
+      <fieldset>
+        <legend>Dirección.</legend>
+        <p>
+          <label class="field"><span>*</span>Calle:</label>
+          <input class="textbox-300" type="text" name="V_Calle" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>Colonia:</label>
+          <input class="textbox-300" type="text" name="V_Colonia" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>Ciudad:</label>
+          <input class="textbox-300" type="text" name="V_Poblacion" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>Código Postal:</label>
+          <input class="textbox-300" type="text" name="V_CP" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>País:</label>
+          <select class="textbox-300" name="V_pais" required>
+            <option>México</option>
+            <option>Otros</option>
+          </select>
+        </p>
+        <p>
+          <label class="field"><span>*</span>Estado:</label>
+          <select class="textbox-300" name="V_estado" required>
+            <option>CDMX</option>
+            <option>Otros</option>
+          </select>
+        </p>
+        <p>
+          <label class="field"><span>*</span>RFC:</label>
+          <input class="textbox-300" type="text" name="V_rfc" required />
+        </p>
+      </fieldset>
+    </div>
+    <hr>
+    <div class="fieldset">
+      <fieldset>
+        <legend>Características de la Empresa.</legend>
+        <p>
+          <label class="field"><span>*</span>¿Qué productos o servicios comercializas?</label>
+          <br><br>
+        </p>
+        <p>
+          <label class="field">Redes:</label>
+          <input type="checkbox" name="redes" >
+        </p>
+        <p>
+          <label class="field">Software:</label>
+          <input type="checkbox" name="software" >
+        </p>
+        <p>
+          <label class="field">Hardware:</label>
+          <input type="checkbox" name="hardware" >
+        </p>
+        <p>
+          <label class="field">Comunicaciones:</label>
+          <input type="checkbox" name="comunic" >
+        </p>
+        <p>
+          <label class="field">Mantenimiento Equipo:</label>
+          <input type="checkbox" name="mant">
+        </p>
+        <p>
+          <label class="field">Consultoría:</label>
+          <input type="checkbox" name="cons">
+        </p>
+        <p>
+          <label class="field"><span>*</span>¿Cómo está compuesta tu cartera de clientes? Deben sumar 100%?</label>
+          <br><br><br>
+        </p>
+        <p>
+          <label class="field">% Hogar:</label>
+          <input class="textbox-50" type="text" name="porchogar" required />
+        </p>
+        <p>
+          <label class="field">% Corporativo:</label>
+          <input class="textbox-50" type="text" name="porcorp" required />
+        </p>
+        <p>
+          <label class="field">% Pymes:</label>
+          <input class="textbox-50" type="text" name="porpymes" required />
+        </p>
+        <p>
+          <label class="field">% Gobierno:</label>
+          <input class="textbox-50" type="text" name="porgob" required />
+        </p>
+        <p>
+          <label class="field">% Otros:</label>
+          <input class="textbox-50" type="text" name="porotro" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>¿Cuántos vendedores hay en tu empresa?</label>
+          <select class="textbox-300" name="vendedores" required>
+            <option>1</option>
+            <option>Más de 10</option>
+          </select>
+        </p>
+        <p>
+          <label class="field"><span>*</span>¿Cuántas personas hay en el área de soporte técnico?</label>
+          <select class="textbox-300" name="soporte" required>
+            <option>Ninguna</option>
+            <option>1</option>
+          </select>
+        </p>
+        <p>
+          <label class="field"><span>*</span>¿Cuéntas con certificaciones técnicas de algún fabricante?</label>
+          <select class="textbox-300" name="certifica" required>
+            <option>Ninguna</option>
+            <option>1</option>
+          </select>
+        </p>
+        <p>
+          <label class="field"><span>*</span>¿Cuál es tu facturación anual?</label>
+          <select class="textbox-300" name="factura" required>
+            <option>Menos de 100,000</option>
+            <option>Mas de 700,000</option>
+          </select>
+        </p>
+      </fieldset>
+    </div>
+    <hr>
+    <div class="fieldset">
+      <fieldset>
+        <legend>Mis sistemas registrados.</legend>
+        <p>
+          <label class="field">ASPEL SAE</label>
+          <input class="textbox-300" type="text" name="V_sae" />
+        </p>
+        <p>
+          <label class="field">ASPEL PROD</label>
+          <input class="textbox-300" type="text" name="V_prod" />
+        </p>
+        <p>
+          <label class="field">ASPEL COI</label>
+          <input class="textbox-300" type="text" name="V_coi" />
+        </p>
+        <p>
+          <label class="field">ASPEL CAJA</label>
+          <input class="textbox-300" type="text" name="V_caja" />
+        </p>
+        <p>
+          <label class="field">ASPEL NOI</label>
+          <input class="textbox-300" type="text" name="V_noi"/>
+        </p>
+        <p>
+          <label class="field">ASPEL FACTURE</label>
+          <input class="textbox-300" type="text" name="V_infoweb"/>
+        </p>
+        <p>
+          <label class="field">ASPEL BANCO</label>
+          <input class="textbox-300" type="text" name="V_banco" />
+        </p>
+      </fieldset>
+    </div>
+    <hr>
+    <div class="fieldset">
+      <fieldset>
+        <legend>Comentarios adicionales.</legend>
+        <p>
+          <label class="field"><span>*</span>Observaciones:</label>
+          <textarea rows="4" cols="50" name="V_obs" required></textarea>
+        </p>
+        <p>
+          <img src="#" alt="C4pTcH4" >
+          <br>
+          <label class="field"><span>*</span>Digite los caracteres:</label>
+          <input class="textbox-300" type="text" name="edcaptcha" required />
+          <input name="cp" id="cp" value="CCVdw" type="hidden">
+        </p>
+        <p>
+          <input name="calificacion" value="0" type="hidden">
+          <input value="0" name="avisoprivacidad" type="hidden">
+          <input type="checkbox" id="checkbox1" name="V_acepta" />
+          <span id="spanCheck1" class="spanCheck1">Conozco el Aviso de Privacidad y la forma en que se utilizarán los datos proporcionados.</span>
+          <a href="#">Aviso de Privacidad</a>
+        </p>
+      </fieldset>
+    </div>
+    <hr><br>
+    <p>
+      <input type="submit" value="Enviar">
+    </p>
+  </form>
+  
+  <!-- SOLO ES PARA OBTENER LA RESPUESTA DEL SUBMIT -->
+  <p id="test"></p>
+</body>
+</html>

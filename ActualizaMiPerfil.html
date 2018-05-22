@@ -1,0 +1,304 @@
+<html>
+<head>
+  <title>Mi Perfil</title>
+  <script src="js/jquery-3.3.1.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".spanCheck1").on("click", function(){
+        if($('#checkbox1')[0].checked){
+             $('#checkbox1').prop('checked', false);
+        }
+        else{
+            $('#checkbox1').prop('checked', true);
+        }
+      });
+      $(".spanCheck2").on("click", function(){
+        if($('#checkbox2')[0].checked){
+             $('#checkbox2').prop('checked', false);
+        }
+        else{
+            $('#checkbox2').prop('checked', true);
+        }
+      });
+
+      // para almacenar los datos en una cadena JSON
+      function onSubmit( form ){
+        var dataForm = $(form).serializeArray();
+        var dataFormObject = {};
+        $.each(dataForm, function(i, v) {
+            dataFormObject[v.name] = v.value;
+        });
+        console.log( dataFormObject );
+
+        document.getElementById('test').innerHTML = JSON.stringify(dataFormObject);
+      }
+
+      document.getElementById('RegForm').addEventListener('submit', function(event){
+          event.preventDefault();
+          onSubmit(this);
+      });
+
+    });
+  </script>
+
+  <style>
+    form { width:655px; margin:0 auto; }
+    div.fieldset { width: 655px; }
+    fieldset { border:none; padding: 25px; }
+    legend { font-size: 20px; font-weight: bold; padding-left: 10px; }
+    label.field { text-align: left; width: 200px; float: left; font-weight: bold; }
+    input { text-indent: 5px; }
+    input.textbox-300 { width: 300px; float:left; }
+    input.image { width: 100px; }
+    fieldset p { clear:both; padding: 5px; }
+    label span, .required { color:red; font-weight: bold; }
+    hr { float:left; width: 650px; }
+    #spanCheck1, #spanCheck2, #checkbox1, #checkbox2{
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!--<form class="data-update" action="#" method="get">-->
+  <form id="RegForm">
+    <input type="hidden" name="RegForm" value="4" />
+    <h1>Actualiza datos de Perfil</h1>
+    <hr>
+    <div class="fieldset">
+      <fieldset>
+        <legend>Datos de contacto</legend>
+        <p>
+          <label class="field"><span>*</span>Nombre y apellidos:</label>
+          <input class="textbox-300" type="text" name="V_Nombre" required />
+        </p>
+        <p>
+          <label class="field">Puesto:</label>
+          <input class="textbox-300" type="text" name="V_puesto" />
+        </p>
+        <p>
+          <label class="field"><span>*</span>Correo electrónico:</label>
+          <input class="textbox-300" type="email" name="V_email" required />
+          <label class="field">(Para dos o más direcciones, separarlas con ",")</label>
+        </p>
+        <p>
+          <label class="field">Logo:</label>
+          <img class="image" src="aspelcom/assets/img/aspel_logos/logo_menu.png" type="image" alt="Logo" />
+          <input name="clef" value="529" type="hidden"> <!-- verificar para que se usa -->
+        </p>
+      </fieldset>
+    </div>
+    <hr>
+    <div class="fieldset">
+      <fieldset>
+        <legend>Datos de facturación</legend>
+        <p>
+          <label class="field"><span>*</span>Razón social:</label>
+          <!-- <input class="textbox-300" type="text" required /> -->
+          <input name="V_razon" maxlength="60" value="alexfranco sa da cv" type="hidden">
+        </p>
+        <p>
+          <label class="field"><span>*</span>RFC:</label>
+          <!-- <input class="textbox-300" type="text" required /> -->
+          <input name="V_rfc" maxlength="13" value="FANA760608MG1" type="hidden">
+          <input value="FANA760608MG1" name="rfcanterior" type="hidden">
+          <label class="field">(Sólo si tu país es México)</label>
+        </p>
+        <p style="color:red;">
+          Por ser un Distribuidor no puedes actualizar Razón Social ni RFC.
+          Si requieres hacerlo, contacta a tu ejecutivo o a ventas.
+        </p>
+        <p>
+          <label class="field">Nombre comercial:</label>
+          <input class="textbox-300" type="text" name="V_nomcomercial" />
+        </p>
+        <p>
+          <label class="field"><span>*</span>Tipo de contribuyente:</label>
+          <select class="textbox-300" name="V_persona" required>
+            <option>Persona física</option>
+            <option>Persona moral</option>
+          </select>
+        </p>
+        <p>
+          <label class="field"><span>*</span>Registro de identificación fiscal:</label>
+          <input class="textbox-300" type="text" name="regidentidadfiscal" required />
+          <label class="field">(Sólo si tu país <span>no</span> es México)</label>
+        </p>
+        <p>
+          <label class="field"><span>*</span>Calle:</label>
+          <input class="textbox-300" type="text" name="V_Calle2" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>No. exterior:</label>
+          <input class="textbox-300" type="text" name="factnoext" required />
+        </p>
+        <p>
+          <label class="field">No. interior:</label>
+          <input class="textbox-300" type="text" name="factnoint"/>
+        </p>
+        <p>
+          <label class="field"><span>*</span>Colonia:</label>
+          <input class="textbox-300" type="text" name="V_Colonia2" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>Ciudad/Población:</label>
+          <input class="textbox-300" type="text" name="V_Poblacion2" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>Código Postal:</label>
+          <input class="textbox-300" type="text" name="V_CP2" required />
+          <label class="field">(Sólo si tu país es México)</label>
+        </p>
+        <p>
+          <label class="field"><span>*</span>País:</label>
+          <select class="textbox-300" name="V_pais2" required>
+            <option>México</option>
+            <option>Otros</option>
+          </select>
+        </p>
+        <p>
+          <label class="field"><span>*</span>Estado:</label>
+          <select class="textbox-300" name="V_estado2" required>
+            <option>CDMX</option>
+            <option>Otros</option>
+          </select>
+        </p>
+        <p>
+          <label class="field"><span>*</span>Lada/Teléfono:</label>
+          <input class="textbox-50" type="text" name="V_lada2" required />
+          <input class="textbox-300" type="text" name="V_telefono2" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>Fax:</label>
+          <input class="textbox-300" type="text" name="V_fax" />
+        </p>
+        <p>
+          <label class="field"><span>*</span>Correo electrónico para facturación:</label>
+          <input class="textbox-300" type="text" name="correofact" required />
+          <label class="field">(Para dos o más direcciones, sepáralas con ",")</label>
+        </p>
+        <p>
+          <label class="field"><span>*</span>Uso de CFDI:</label>
+          <select class="textbox-300" name="usocfdi" required>
+            <option>Gastos en general</option>
+            <option>Otros</option>
+          </select>
+        </p>
+        <p>
+          <input id="checkbox1" class="checkbox1" type="checkbox" name="chkPasa" >
+          <span id="spanCheck1" class="spanCheck1">Deseo que mis datos de envío sean los mismos que los de facturación.</span>
+          <br><a href="#">Aviso de Privacidad</a>
+        </p>
+      </fieldset>
+    </div>
+    <hr>
+    <div class="fieldset">
+      <fieldset>
+        <legend>Datos de envío</legend>
+        <p>
+          <label class="field"><span>*</span>Calle:</label>
+          <input class="textbox-300" type="text" name="V_Calle" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>No. exterior:</label>
+          <input class="textbox-300" type="text" name="noext" required />
+        </p>
+        <p>
+          <label class="field">No. interior:</label>
+          <input class="textbox-300" type="text" name="noint"/>
+        </p>
+        <p>
+          <label class="field"><span>*</span>Colonia:</label>
+          <input class="textbox-300" type="text" name="V_Colonia" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>Ciudad/Población:</label>
+          <input class="textbox-300" type="text" name="V_Poblacion" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>Código Postal:</label>
+          <input class="textbox-300" type="text" name="V_CP" required />
+          <label class="field">(Sólo si tu país es México)</label>
+        </p>
+        <p>
+          <label class="field"><span>*</span>País:</label>
+          <select class="textbox-300" name="V_pais" required>
+            <option>México</option>
+            <option>Otros</option>
+          </select>
+        </p>
+        <p>
+          <label class="field"><span>*</span>Estado:</label>
+          <select class="textbox-300" name="V_estado" required>
+            <option>CDMX</option>
+            <option>Otros</option>
+          </select>
+        </p>
+        <p>
+          <label class="field">Referencia:</label>
+          <input class="textbox-300" type="text" name="referencia" />
+        </p>
+        <p>
+          <label class="field">Entre la calle:</label>
+          <input class="textbox-300" type="text" name="entrecalle1" />
+        </p>
+        <p>
+          <label class="field">y la calle:</label>
+          <input class="textbox-300" type="text" name="entrecalle2"/>
+        </p>
+        <p>
+          <label class="field"><span>*</span>Lada/Teléfono:</label>
+          <input class="textbox-300" type="text" name="V_lada" required />
+          <input class="textbox-300" type="text" name="V_telefono" required />
+        </p>
+        <p>
+          <label class="field"><span>*</span>Giro:</label>
+          <select class="textbox-300" name="V_giro" required>
+            <option>Servicios</option>
+            <option>Otros</option>
+          </select>
+        </p>
+        <p>
+          <label class="field">No. de empleados:</label>
+          <input class="textbox-300" type="text" name="V_empleados" />
+        </p>
+        <input value="" name="V_dist" type="hidden">
+        <p>
+          <input id="checkbox2" class="checkbox2" type="checkbox" name="aviso" >
+          <span id="spanCheck2" class="spanCheck2">Conozco el Aviso de Privacidad y la forma en que se utilizarán los datos proporcionados.</span>
+          <br><a href="#">Aviso de Privacidad</a>
+        </p>
+        <input name="confact" value="0" type="hidden">
+        <input name="url" value="" type="hidden">
+        <input name="usuario" value="9999" type="hidden">
+        <input name="avisoprivacidad" value="1" type="hidden">
+      </fieldset>
+    </div>
+    <hr>
+    <div class="fieldset">
+      <fieldset>
+        <legend>Cambiar contraseña</legend>
+        <p>
+          <label class="field">Contraseña actual:</label>
+          <input class="textbox-300" type="password" name="V_contrant" />
+        </p>
+        <p>
+          <label class="field">Nueva contraseña:</label>
+          <input class="textbox-300" type="password" name="V_contranue" />
+        </p>
+        <p>
+          <label class="field">Confirmar contraseña:</label>
+          <input class="textbox-300" type="password" name="V_confcontra" />
+        </p>
+        <p>
+          <b>Nota</b>: Con esta opción sólo se cambia la contraseña para tener acceso en aspel.com
+        </p>
+      </fieldset>
+    </div>
+    <hr>
+    <p>
+      <input type="submit" value="Enviar"/>
+    </p>
+  </form>
+  <p id="test"></p>
+</body>
+</html>
