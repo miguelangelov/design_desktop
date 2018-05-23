@@ -51,6 +51,9 @@
       cursor: pointer;
     }
   </style>
+  <!-- Estilos "finales" para el formulario -->
+  		<link rel="stylesheet" href="css/estilos.css" />
+  
 </head>
 <body>
 
@@ -58,19 +61,20 @@
   <form id="RegForm">
     <input type="hidden" name="RegForm" value="1" />
     <h1>Registro</h1>
-    <hr><br>
+    <hr>
+	<br>
     <div class="fieldset">
       <fieldset>
-        <legend>Datos del contacto o responsable de la empresa.</legend>
-        <p>
+	  	<legend><h3>Datos del contacto o responsable de la empresa.</h3></legend>
+        <p class="justificados">
           <label class="field"><span>*</span>Nombre y apellidos:</label>
           <input class="textbox-300" type="text" name="V_Nombre" required />
         </p>
-        <p>
+        <p class="justificados">
           <label class="field"><span>*</span>Correo electrónico:</label>
           <input class="textbox-300" type="text" name="V_email" required />
         </p>
-        <p>
+        <p class="justificados">
           <label class="field"><span>*</span>Confirmar correo:</label>
           <input class="textbox-300" type="text" name="confemail" required />
         </p>
@@ -79,38 +83,38 @@
     <hr><br>
     <div class="fieldset">
       <fieldset>
-        <legend>Datos de la empresa.</legend>
-        <p>
+	  	<legend><h3>Datos de la empresa.</h3></legend>
+        <p class="justificados">
           <label class="field"><span>*</span>Razón social:</label>
           <input class="textbox-300" type="text" name="V_razon" required />
         </p>
-        <p>
+        <p class="justificados">
           <label class="field">Nombre comercial:</label>
           <input class="textbox-300" type="text" name="V_nomcomercial"  />
         </p>
-        <p>
+        <p class="justificados">
           <label class="field"><span>*</span>País:</label>
-          <select class="textbox-300" name="V_pais" required>
+          <select class="textbox-300 aspel_select" name="V_pais" required>
             <option>México</option>
             <option>Otros</option>
           </select>
         </p>
-        <p>
+        <p class="justificados">
           <label class="field"><span>*</span>Estado:</label>
-          <select class="textbox-300" name="V_estado" required>
+          <select class="textbox-300 aspel_select" name="V_estado" required>
             <option>CDMX</option>
             <option>Otros</option>
           </select>
         </p>
-        <p>
+        <p class="justificados">
           <label class="field"><span>*</span>RFC:</label>
           <input class="textbox-300" type="text" name="V_rfc" required />
         </p>
-        <p>
+        <p class="justificados">
           <label class="field"><span>*</span>lada:</label>
           <input class="textbox-300" type="text" name="V_lada" required />
         </p>
-        <p>
+        <p class="justificados">
           <label class="field"><span>*</span>Teléfono:</label>
           <input class="textbox-300" type="text" name="V_telefono" required />
         </p>
@@ -119,13 +123,13 @@
     <hr><br>
     <div class="fieldset">
       <fieldset>
-        <legend>Distribuidor Aspel.</legend>
-        <p>
+	  	<legend><h3>Distribuidor Aspel.</h3></legend>
+        <p class="justificados">
           <label class="field">Póliza de distribuidor Aspel:</label>
           <input class="textbox-300" type="text" name="V_distribuidor"  required />
           <input type="hidden" name="d_fac" value="1"/>
         </p>
-        <p>
+        <p class="justificados">
           En caso de que algún distribuidor Aspel te esté apoyando indica aquí el número de póliza
           de este distribuidor, si no cuentas con él no indiques nada no es obligatorio.
         </p>
@@ -134,29 +138,29 @@
     <hr><br>
     <div class="fieldset">
       <fieldset>
-        <legend>Definición de usuario y constraseña.</legend>
-        <p>
+	  	<legend><h3>Definición de usuario y constraseña.</h3></legend>
+        <p class="justificados">
           <label class="field"><span>*</span>Usuario:</label>
           <input class="textbox-300" type="text" name="V_us" required />
         </p>
-        <p>
+        <p class="justificados">
           <label class="field"><span>*</span>Contraseña:</label>
           <input class="textbox-300" type="password" name= "V_contrasena" required />
         </p>
-        <p>
+        <p class="justificados">
           <label class="field"><span>*</span>Confirmar contraseña:</label>
           <input class="textbox-300" type="password" name="V_confirmar" required />
         </p>
-        <p>
+        <p class="justificados">
           Con este usuario y contraseña te identificarás en aspel.com, recuerda que debe ser único y
           una vez asignado no podrás modificarlo posteriormente. La contraseña debe tener como máximo 10 caracteres.
         </p>
-        <p>
+        <p class="justificados">
           <input id="checkbox1" class="checkbox1" name="avisoprivacidad" type="checkbox" >
           <span id="spanCheck" class="spanCheck">Conozco el Aviso de Privacidad y la forma en que se utilizarán los datos proporcionados.</span>
-          <br><a href="#">Aviso de Privacidad</a>
+          <br><a class="masinfo" href="#">Aviso de Privacidad</a>
         </p>
-        <p>
+        <p class="justificados">
           <input name="V_cursos" value="" type="hidden">
           <input name="tipo" value="" type="hidden">
           <input name="calend" value="" type="hidden">
@@ -166,9 +170,9 @@
       </fieldset>
     </div>
     <hr><br>
-    <p>
-      <input type="submit" value="Enviar">
-    </p>
+    <button class="compra"> ENVIAR
+<!--<input type="submit" value="Enviar">-->
+    </button>
   </form>
   
   <!-- SOLO ES PARA OBTENER LA RESPUESTA DEL SUBMIT -->

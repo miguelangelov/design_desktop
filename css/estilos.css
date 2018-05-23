@@ -1,0 +1,335 @@
+body {
+	padding-left: 1em;
+}
+/* llamado de tipografía */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,500,600,700');
+
+/* Heading1 */
+h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	font-size: 40px;
+	color: #5C5C5C;
+	line-height: 40px;
+}
+/* Heading2 */
+h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	font-size: 30px;
+	color: #5C5C5C;
+	line-height: 30px;
+}
+/* Heading3 */
+h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	font-size: 20px;
+	color: #5C5C5C;
+	line-height: 20px;
+}
+/* Heading4 */
+h4 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	font-size: 15px;
+	color: #5C5C5C;
+	line-height: 15px;
+}
+/* Heading5 */
+h5 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 15px;
+	color: #008FD3;
+	line-height: 15px;
+}
+/* p justificados */
+p.justificados {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	color: #909AAE;
+	text-align: justify;
+	line-height: 15px;
+}
+/* p idle */
+p.idle {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	color: rgba(144,154,174,0.50);
+	text-align: justify;
+	line-height: 20px;
+}
+/* p centrados */
+p.centrado {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;;
+	font-size: 12px;
+	color: #909AAE;
+	text-align: center;
+	line-height: 20px;
+}
+/* a mas info */
+a.masinfo {
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+font-size: 12px;
+color: #008FD3;
+text-align: right;
+line-height: 15px;
+text-decoration: underline;
+}
+/* strong */
+strong {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	color: #5C5C5C;
+	text-align: center;
+	line-height: 20px;
+}
+strong.idle {
+	color: #DDDDDD;
+}
+/* Precios */
+span.precios {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 50px;
+	color: #5C5C5C;
+	text-align: center;
+}
+/* botones verdes */
+button.compra {
+	background-image: linear-gradient(-180deg, #B4EC51 0%, #429321 100%);
+	min-height: 36px;
+	min-width: 140px;
+	border-radius: 50px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 10px;
+	color: #FFFFFF;
+	text-align: center;
+	border-style: none;
+}
+button.compra:hover {
+	background-image: linear-gradient(-180deg, #B4EC51 0%, #B4EC51 100%);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.22);	
+}
+/* botones outline negros */
+button.cart {
+		background: #FFFFFF;
+		border: 1px solid rgba(0,0,0,0.70);
+		min-height: 36px;
+		min-width: 140px;
+		border-radius: 50px;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 700;
+		font-size: 10px;
+		color: rgba(0,0,0,0.70);
+		text-align: center;
+}
+button.cart:hover {
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.22);
+}
+/* botones tdc*/
+button.tdcactive {
+	height: 16px;
+	background: #FFFFFF;
+	border: 1px solid #008FD3;
+	border-radius: 4px;	
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 13px;
+	text-align: center;
+	color: #008FD3;
+}
+button.tdcactive:hover {
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.22);
+}
+button.tdcidle {
+	height: 16px;
+	background: #FFFFFF;
+	border: 1px solid rgba(144,154,174,0.50);
+	border-radius: 4px;	
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 13px;
+	text-align: center;
+	color: rgba(144,154,174,0.50);
+}
+button.tdcidle:hover {
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.22);	
+}
+/* radios */
+input[type="radio"] {
+    display:none;
+}
+input[type="radio"] + label{
+	display: inline-block;
+	padding-left: 20px;
+	width: 120px;
+	height: 20px;
+	background: url(img/botones/radio/radio_off.svg) left center no-repeat;
+	cursor:pointer;
+}
+input[type="radio"]:checked + label{
+	background: url(img/botones/radio/radio_on.svg) left center no-repeat;
+}
+.aspel_radios{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+	font-size: 12px;
+	color: #909AAE;
+	text-align: justify;
+	line-height: 15px;
+}
+/* precios mini */
+span.minip {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 10px;
+	color: #5C5C5C;
+}
+/* input de texto */
+input[type="text"] {
+	height: 36px;
+	background: #F8F8FA;
+	border-radius: 4px;
+	border-style: none;
+	box-shadow: inset 0 1px 3px  rgba(0, 0, 0, 0.2);
+}
+/*input de pass*/
+input[type="password"] {
+	height: 36px;
+	background: #F8F8FA;
+	border-radius: 4px;
+	border-style: none;
+	box-shadow: inset 0 1px 3px  rgba(0, 0, 0, 0.2);
+}
+/* titulares */
+div.titular {
+	background: #F8F8FA;
+	width: 100%;
+	height: 99px;
+	padding-top: 10px;
+}
+.aspel_inputs{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	color: #909AAE;
+	text-align: justify;
+	line-height: 15px;
+}
+
+/*pasos*/
+.pasos.active{
+	border-bottom-style: solid;
+	border-bottom-width: 5px;
+	padding-bottom: 2px;
+	border-bottom-color: #5c5c5c;
+	margin-left: 5px;
+	min-width: 100px;
+	display: inline-block;
+	min-height: 22px;
+}
+.pasos.idle{
+	border-bottom: 5px solid #DDDDDD;
+	padding-bottom: 2px;
+	margin-left: 5px;
+	min-width: 100px;
+	display: inline-block;
+	min-height: 22px;
+}
+/*tabla*/
+thead {
+	background-color: #F8F8FA;
+}
+thead th {
+	font-weight: 500;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12px;
+	color: #5C5C5C;
+	line-height: 27px;
+}
+tbody td{
+	line-height: 27px;
+	border-bottom: 1px solid #DEDEDE;
+	font-family: 'Montserrat', sans-serif;
+	color: #909AAE;
+	font-size: 12px;
+	padding-top: 10px;
+}
+
+/*FDP*/
+ul.fdp {
+	list-style: none;
+}
+ul.fdp li.listi {
+	float: left;
+	display: inline-block;
+	margin-left: 5px;
+	min-width: 100px;
+	min-height: 44px;
+	text-align: center;
+	background: url(img/botones/tri/line.svg) 0 21px no-repeat;
+}
+ul.fdp li.listi:hover {
+background: url(img/botones/tri/triangle.svg) 0 21px no-repeat;
+}
+ul.fdp li.listi.active {
+	background: url(img/botones/tri/triangle.svg) 0 21px no-repeat;
+}
+/*Status envio*/
+ul.status_envio {
+	list-style: none;
+}
+ul.status_envio li {
+	display: inline-block;
+	width: 150px;
+	float: left;
+	margin-left: 10px;
+}
+ul.status_envio li svg.active {
+	fill: #008FD3;
+}
+
+/* Estilos Nuevos*/
+/*input de pass*/
+input[type="password"] {
+	height: 36px;
+	background: #F8F8FA;
+	border-radius: 4px;
+	border-style: none;
+	box-shadow: inset 0 1px 3px  rgba(0, 0, 0, 0.2);
+}
+hr {
+	border: 0;
+	    height: 0;
+	    border-top: 1px solid rgba(0, 0, 0, 0.1);
+	    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/*Selects*/
+.aspel_select {
+	background: url(/img/botones/slate/slate.svg) no-repeat right center #F8F8FA;
+	box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.20);
+	border-radius: 4px;
+	height: 25px;
+	border-style: none;
+	padding-left: 8px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	color: #909AAE;
+	min-width: 100px;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}

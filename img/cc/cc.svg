@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="25px" viewBox="0 0 38 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="92.450574%" x2="100%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#272727" offset="0%"></stop>
+            <stop stop-color="#626262" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="ppta_final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="carrito-noi-copy" transform="translate(-866.000000, -547.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="Group-13" transform="translate(437.000000, 455.000000)">
+                <g id="Group-12" transform="translate(0.000000, 17.000000)">
+                    <path d="M465.457575,75 C466.307984,75 467,75.6549793 467,76.460035 L467,80 L429,80 L429,76.460035 C429,75.6549793 429.692016,75 430.542425,75 L465.457575,75 Z M467,86 L429,86 L429,83 L467,83 L467,86 Z M467,98.4924165 C467,99.3237415 466.307986,100 465.45758,100 L430.54242,100 C429.692014,100 429,99.3236272 429,98.4924165 L429,93.2170742 C429,93.2150173 429,93.2129605 429,93.2109036 L429,89 L467,89 L467,98.4924165 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
