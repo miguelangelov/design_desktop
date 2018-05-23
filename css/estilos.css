@@ -308,6 +308,14 @@ input[type="password"] {
 	border-style: none;
 	box-shadow: inset 0 1px 3px  rgba(0, 0, 0, 0.2);
 }
+/*input de email*/
+input[type="email"] {
+	height: 36px;
+	background: #F8F8FA;
+	border-radius: 4px;
+	border-style: none;
+	box-shadow: inset 0 1px 3px  rgba(0, 0, 0, 0.2);
+}
 hr {
 	border: 0;
 	    height: 0;
@@ -328,6 +336,7 @@ hr {
 	font-size: 12px;
 	color: #909AAE;
 	min-width: 100px;
+	display: block;
 }
 select {
     -webkit-appearance: none;
